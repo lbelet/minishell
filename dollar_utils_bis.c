@@ -88,10 +88,10 @@ char	*ft_strjoin_modif_free_free(char *s1, char const s2, int *c_c)
 {
 	char	*dst;
 	int		i;
-	int		j;
+	// int		j;
 
 	i = -1;
-	j = 0;
+	// j = 0;
 	if (!s1)
 	{
 		dst = malloc(2);

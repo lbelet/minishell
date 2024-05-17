@@ -32,7 +32,7 @@
 # include <dirent.h>
 # include <termios.h>
 
-char	**g_var;
+extern char	**g_var;
 void	display_prompt(int num);
 void	define_input_signals(void);
 int		ft_echo(char **cmd_test);

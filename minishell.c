@@ -12,6 +12,8 @@
 
 #include "minishell.h"
 
+char **g_var;
+
 int	ft_static(int i)
 {
 	static int	return_val = 0;

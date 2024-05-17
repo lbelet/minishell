@@ -45,10 +45,10 @@ char	*ft_strjoin_modif_free(char *s1, char const s2)
 {
 	char	*dst;
 	int		i;
-	int		j;
+	// int		j;
 
 	i = 0;
-	j = 0;
+	// j = 0;
 	if (!s1)
 	{
 		dst = malloc(2);

@@ -15,9 +15,9 @@
 void	ft_total_args_test(char **tmp, char *new_arg)
 {
 	int	i;
-	int	j;
+	// int	j;
 
-	j = 0;
+	// j = 0;
 	i = 0;
 	while (tmp[i])
 	{
@@ -30,11 +30,11 @@ void	ft_total_args_test(char **tmp, char *new_arg)
 void	ft_sort_args_test(char *new_args)
 {
 	int		i;
-	int		j;
+	// int		j;
 	char	**tmp;
 
 	i = 0;
-	j = 0;
+	// j = 0;
 	tmp = ft_malloc_tab(g_var);
 	while (g_var[i])
 	{
