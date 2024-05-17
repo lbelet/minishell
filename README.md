@@ -33,3 +33,24 @@ En plus des compétences techniques, ce projet aide à développer :
 - **Travail en équipe** : Collaboration avec d'autres étudiants pour échanger des idées, réviser du code, et résoudre des bugs.
 - **Gestion du temps** : Planification et organisation pour respecter les délais de projet.
 - **Adaptabilité** : Apprentissage et adaptation rapide aux nouvelles exigences et défis techniques.
+
+## Installation et Lancement
+
+Pour compiler et exécuter Minishell, suivez ces étapes :
+
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/lbelet/minishell.git
+   cd minishell
+2. Lancer le projet :
+   ```bash
+   make
+   ./minishell
+3. Exemple de commandes :
+   ```bash
+   minishell> echo Hello, World!
+   minishell> cd ..
+   minishell> pwd
+   minishell> ls -l | grep minishell > output.txt
+
+   
