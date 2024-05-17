@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I$(HOME)/.brew/Cellar/readline/8.1.2/include #-g -fsanitize=address 
+CFLAGS = -Wall -Wextra -Werror #-g -fsanitize=address
 
 NAME = minishell
 
@@ -64,11 +64,29 @@ SRC = minishell.c\
 
 OBJ = $(SRC:.c=.o)
 
+# Detect the operating system
+UNAME_S := $(shell uname -s)
+
+# MacOS specific settings
+ifeq ($(UNAME_S), Darwin)
+	READLINE_INC = -I$(HOME)/.brew/Cellar/readline/8.1.2/include
+	READLINE_LIB = -L$(HOME)/.brew/Cellar/readline/8.1.2/lib
+endif
+
+# Linux specific settings
+ifeq ($(UNAME_S), Linux)
+	READLINE_INC = -I/usr/include/readline
+	READLINE_LIB = -L/usr/lib
+endif
+
 all : $(NAME)
 
 $(NAME): $(OBJ)
 	make -C libft
-	$(CC) $(CFLAGS) $(OBJ) libft/libft.a -lreadline  -L$(HOME)/.brew/Cellar/readline/8.1.2/lib -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) libft/libft.a -lreadline $(READLINE_LIB) -o $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(READLINE_INC) -c $< -o $@
 
 clean:
 	make clean -C libft
@@ -81,3 +99,6 @@ fclean : clean
 re : fclean all
 
 .PHONY: all clean fclean re
+
+	make fclean -C libft
+	rm -f $(NAME)
