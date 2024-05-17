@@ -34,6 +34,14 @@ En plus des compétences techniques, ce projet aide à développer :
 - **Gestion du temps** : Planification et organisation pour respecter les délais de projet.
 - **Adaptabilité** : Apprentissage et adaptation rapide aux nouvelles exigences et défis techniques.
 
+## Prérequis
+
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+
+- Un système d'exploitation Unix (Linux ou macOS)
+- [GNU Make](https://www.gnu.org/software/make/)
+- [GCC](https://gcc.gnu.org/) ou un autre compilateur C compatible
+
 ## Installation et Lancement
 
 Pour compiler et exécuter Minishell, suivez ces étapes :
@@ -52,5 +60,3 @@ Pour compiler et exécuter Minishell, suivez ces étapes :
    minishell> cd ..
    minishell> pwd
    minishell> ls -l | grep minishell > output.txt
-
-   
