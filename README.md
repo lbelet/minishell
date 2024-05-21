@@ -1,62 +1,84 @@
 # Minishell
+![C](https://img.shields.io/badge/language-C-blue)
+![Shell](https://img.shields.io/badge/technology-Shell-red)
+![42School](https://img.shields.io/badge/school-42-orange)
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Important Concepts](#important-concepts)
+- [Key Learning Outcomes](#key-learning-outcomes)
+- [Objectives](#objectives)
+- [Common Instructions](#common-instructions)
+- [Project Requirements](#project-requirements)
+- [Installation / Compile / Run](#installation--compile--run)
+- [Example Usage](#example-usage)
+- [Additional Resources](#additional-resources)
 
 ## Introduction
+This project involves creating a simple shell interface similar to bash. It introduces fundamental concepts of Unix programming, including process creation and control, signal handling, and implementing built-in shell commands. By building a basic shell, practical experience is gained in handling user inputs, managing system calls, and process management.
 
-Le projet Minishell est une étape clé du cursus de l'école 42, visant à approfondir les connaissances en programmation système et à développer des compétences en création de shell Unix. L'objectif est de créer un shell minimaliste capable d'interpréter et d'exécuter des commandes, tout en gérant les signaux, les processus et les redirections.
+## Important Concepts
+- 🐚 **Shell Basics**: Understand the core functionalities of a Unix shell:
+  - **Command Execution**: Running programs based on user inputs.
+  - **Built-in Commands**: Implementing essential commands within the shell itself.
+  - **Signal Handling**: Managing interrupts and signals from the operating system.
+  - **Pipelines and Redirection**: Handling complex command structures and I/O redirections.
 
-## Fonctionnalités
+## Key Learning Outcomes
+- 🔄 **Process Management**: Learn how to create and manage processes using fork, exec, and wait system calls.
+- 📜 **Command Parsing**: Develop skills to parse and interpret user commands.
+- ⚙️ **Signal Handling**: Implement signal handling to manage process interruptions and terminations.
+- 🧩 **Problem Solving**: Apply theoretical knowledge to solve practical issues in shell implementation.
 
-Minishell comprend les fonctionnalités suivantes :
-- Affichage d'un prompt personnalisable.
-- Lecture et exécution de commandes simples.
-- Gestion des chemins relatifs et absolus pour les commandes.
-- Implémentation des commandes internes (built-ins) comme `cd`, `echo`, `pwd`, `export`, `unset`, `env` et `exit`.
-- Redirections d'entrée et de sortie (`<`, `>`, `>>`).
-- Gestion des pipes (`|`).
-- Gestion des variables d'environnement.
-- Gestion des signaux (Ctrl+C, Ctrl+D, Ctrl+\).
+## Objectives
+- 🖥️ **Basic Shell Functions**: Create a prompt to display and accept user inputs.
+- 🔄 **Execution Flow**: Implement a loop to read, parse, and execute commands until an exit command is given.
+- 📜 **Built-in Commands**: Include common built-ins like `cd`, `echo`, `pwd`, `export`, `unset`, `env`, and `exit`.
+- 🔧 **Redirections and Pipes**: Implement input/output redirections and pipelines.
+- 🛠️ **Error Handling**: Gracefully handle errors and edge cases.
 
-## Compétences Techniques
+## Common Instructions
+- 📜 This project is written in C and adheres to the 42 Norm.
+- 🚫 Handles all heap-allocated memory properly to avoid leaks.
+- 📄 Provides a Makefile with the rules: `$(NAME)`, `all`, `clean`, `fclean`, and `re`.
+- ❌ Global variables are forbidden.
+- 🛠️ Programs do not quit unexpectedly and manage errors gracefully.
 
-Ce projet permet de développer et de renforcer les compétences suivantes :
-- **Programmation en C** : Écriture de code en langage C conforme aux normes de l'école 42.
-- **Gestion des processus** : Utilisation des appels système pour créer et gérer des processus avec `fork()`, `execve()`, `waitpid()`, etc.
-- **Manipulation des fichiers** : Gestion des descripteurs de fichiers et redirections avec `dup2()`, `pipe()`, etc.
-- **Gestion des signaux** : Implémentation de la gestion des signaux pour une interruption propre et une utilisation interactive.
-- **Analyse et parsing** : Analyse lexicale et syntaxique des lignes de commande pour une interprétation correcte.
-- **Allocation dynamique** : Utilisation efficace de la mémoire dynamique avec `malloc()`, `free()`, tout en évitant les fuites de mémoire.
+## Project Requirements
+This shell program should support:
+1. **Prompt Display**: Display a prompt and wait for user input.
+2. **Command Execution**: Execute commands and built-in shell commands.
+3. **Redirections**: Handle input (`<`) and output (`>`, `>>`) redirections.
+4. **Pipes**: Implement pipes (`|`) to pass output of one command as input to another.
+5. **Signals**: Handle signals like `Ctrl+C` and `Ctrl+D`.
 
-## Autres Compétences
+## Installation / Compile / Run
+1. ⬇️ Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/minishell.git
+    cd minishell
+    ```
+2. 🔧 Compile the project:
+    ```sh
+    make
+    ```
+3. ▶️ Run the shell:
+    ```sh
+    ./minishell
+    ```
 
-En plus des compétences techniques, ce projet aide à développer :
-- **Résolution de problèmes** : Analyser et résoudre des problèmes complexes liés à l'exécution des commandes et à la gestion des processus.
-- **Travail en équipe** : Collaboration avec d'autres étudiants pour échanger des idées, réviser du code, et résoudre des bugs.
-- **Gestion du temps** : Planification et organisation pour respecter les délais de projet.
-- **Adaptabilité** : Apprentissage et adaptation rapide aux nouvelles exigences et défis techniques.
-
-## Prérequis
-
-Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
-
-- Un système d'exploitation Unix (Linux ou macOS)
-- [GNU Make](https://www.gnu.org/software/make/)
-- [GCC](https://gcc.gnu.org/) ou un autre compilateur C compatible
-
-## Installation et Lancement
-
-Pour compiler et exécuter Minishell, suivez ces étapes :
-
-1. Clonez le dépôt :
-   ```bash
-   git clone https://github.com/lbelet/minishell.git
-   cd minishell
-2. Lancer le projet :
-   ```bash
-   make
-   ./minishell
-3. Exemple de commandes :
-   ```bash
+## Example Usage
+▶️ Example session with the shell:
+```bash
    minishell> echo Hello, World!
    minishell> cd ..
    minishell> pwd
    minishell> ls -l | grep minishell > output.txt
+   ```
+
+## Additional Resources
+- [Unix Shells](https://www.gnu.org/software/bash/manual/bash.html)
+- [Process Management](https://man7.org/linux/man-pages/man2/fork.2.html)
+- [Signal Handling](https://man7.org/linux/man-pages/man2/signal.2.html)
+- [Redirections and Pipes](https://tldp.org/LDP/abs/html/io-redirection.html)
+
