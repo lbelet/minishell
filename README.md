@@ -55,7 +55,7 @@ This shell program should support:
 ## Installation / Compile / Run
 1. ⬇️ Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/minishell.git
+    git clone https://github.com/lbelet/minishell.git
     cd minishell
     ```
 2. 🔧 Compile the project:
